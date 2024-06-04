@@ -1,18 +1,26 @@
-public class Conta {
+public abstract class Conta implements :Conta{
 
-    private int agencia;
-    private int numero_conta;
-    private double saldo;
+    private static final int AGENCIA_PADRAO = 1;
+    private static int SEQUENCIAL = 1;
 
-    public void sacar(){
+    protected int agencia;
+    protected int numero_conta;
+    protected double saldo;
+
+    public Conta(){
+        this.agencia = Conta.AGENCIA_PADRAO;
+        this.numero_conta = SEQUENCIAL++;
 
     }
-
-    public void depositar(){
-
+    public void sacar(double valor){
+        saldo -= valor;
     }
 
-    public void transferir(){
+    public void depositar(double valor){
+        saldo += valor;
+    }
+
+    public void transferir(double valor, Conta contaDestino){
         
     }
 
@@ -27,7 +35,4 @@ public class Conta {
     public double getSaldo(){
         return saldo;
     }
-    
-
-    
 }
