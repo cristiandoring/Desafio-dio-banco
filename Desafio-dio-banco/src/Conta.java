@@ -1,4 +1,4 @@
-public abstract class Conta implements :Conta{
+public abstract class Conta implements IConta{
 
     private static final int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
@@ -21,7 +21,11 @@ public abstract class Conta implements :Conta{
     }
 
     public void transferir(double valor, Conta contaDestino){
-        
+       //tira dinheiro da própria conta 
+        this.sacar(valor);
+
+        //coloca dinheiro na conta destino
+        contaDestino.depositar(valor);
     }
 
     public int getAgencia(){
@@ -34,5 +38,11 @@ public abstract class Conta implements :Conta{
 
     public double getSaldo(){
         return saldo;
+    }
+
+    protected void imprimirInfosComum() {
+        System.out.println(String.format("Agência: %d", this.agencia));
+        System.out.println(String.format("Conta: %d", this.numero_conta));
+        System.out.println(String.format("Saldo: %2f", this.saldo));
     }
 }
