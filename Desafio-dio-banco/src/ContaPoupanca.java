@@ -1,29 +1,3 @@
-public class ContaPoupanca {
-    private int agencia;
-    private int numero_conta;
-    private double saldo;
-
-    public void sacar(){
-
-    }
-
-    public void depositar(){
-
-    }
-
-    public void transferir(){
-        
-    }
-
-    public int getAgencia(){
-        return agencia;
-    }
-
-    public int getNumeroConta(){
-        return numero_conta;
-    }
-
-    public double getSaldo(){
-        return saldo;
-    }
+public class ContaPoupanca extends Conta {
+    //classe ContaPopuança está herdando os métodos e atributos da classe Conta por meio do extends
 }
