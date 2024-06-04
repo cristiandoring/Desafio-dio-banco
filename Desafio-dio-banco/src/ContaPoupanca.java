@@ -1,8 +1,8 @@
 public class ContaPoupanca {
-    public int agencia;
-    public int numero_conta;
-    public double saldo;
-    
+    private int agencia;
+    private int numero_conta;
+    private double saldo;
+
     public void sacar(){
 
     }
@@ -13,5 +13,17 @@ public class ContaPoupanca {
 
     public void transferir(){
         
+    }
+
+    public int getAgencia(){
+        return agencia;
+    }
+
+    public int getNumeroConta(){
+        return numero_conta;
+    }
+
+    public double getSaldo(){
+        return saldo;
     }
 }
